@@ -2,7 +2,7 @@
 """
 --> Enter item name to modify: idaly                | Enter item name to modify: dosa
     idaly is available in index number: 0           | Sorry..! your item dosa is not available in your list
-    Enter new item for replace current item: dosa   |
+    Enter new item for replace current item: dosa   | Your order is: ["idly","vada","puri"]
     Your final order is: ["dosa","vada","puri"]     |
 """
 
@@ -16,8 +16,8 @@ if item in cust_order:
     print(f"{item} is available in index number: {i}")
     new_item = input("Enter new item for replace current item: ")
     cust_order[i] = new_item
-
+    print("Your final order is:",cust_order)
 else:
     print(f"Sorry..! Your item {item} is not available in your list")
+    #print("Your order is: ",cust_order)
 
-print("Your final order is:",cust_order)
