@@ -17,6 +17,17 @@ print(f"2 is present at index: {i3}")
 # slicing is possible 
 print(f"Return all tuples: {t1[:]}")
 print(f"Return all tuples: {t1[::]}")
-print(f"Return all tuples: {t1[::-1]}")
+print(f"Return all tuples in reverse: {t1[::-1]}")
+print("=" * 40) # --> used decoration purpose
+
 
 # Operation
+#print(f"Sorting Tuples: {t1.sorted()}") # Not possible
+
+my_tuple = (1,2,3,4,5)
+print(f"My tuple: {my_tuple}")
+temp_list = list(my_tuple)
+print(f"Temporory List: {temp_list}")
+print(temp_list.sort()) # --> returns None
+sorted_list = temp_list.sort()
+print(sorted_list)
