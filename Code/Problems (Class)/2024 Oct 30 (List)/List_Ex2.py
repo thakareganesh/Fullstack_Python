@@ -1,1 +1,0 @@
-# Remove elements from list
