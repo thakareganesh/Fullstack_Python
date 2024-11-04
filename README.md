@@ -23,14 +23,40 @@ This repository created by:
    - #### **Expression**
    -  #### **Operator Priority**
 
-3. ### **Variables**
-   - _`Syntax & Examples`_
+3. ## **Variables**
+   -     Syntax & Examples
 
-4. ### **Print() & Input()**
-    - int()
-    - float()
-    - eval()
-5. ### **Type Conversion**
+4. ## **Print() & Input()**
+    -     Usage and Examples
+    -     eval() Function 
+5. ## **Type Conversion**
+   -     int()
+   -     float()
+   -     str()
+   -     chr()
 
-6. ### **Conditional Statements**
+6. ## **Control Statements**
+    - ### **Conditional Statements**
+        -     if statement
+        -     if-else statement
+        -     elif statement
+        -     Nested if statement
+        -     Multiple if statement
       
+    - ### **Looping Statements**
+      1. #### **Range Based Looping Statement**
+            -     for loop
+            -     for-else loop
+
+      2. #### **Condition Based Looping Statement**
+            -      while loop
+            -      while-else loop
+
+      3. #### **Transfer Statements**
+            -     1. break 
+            -     2. continue
+            -     3. pass
+            -     4. assert
+            -     5. return
+    
+7. ## **Collections** 
