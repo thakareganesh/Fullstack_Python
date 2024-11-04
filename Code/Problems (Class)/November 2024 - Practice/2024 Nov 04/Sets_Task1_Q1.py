@@ -1,5 +1,5 @@
 # Sets Task 1:
-# Consider following sets
+# Consider following sets & perform operations
 
 Jubilee_Hills = {"Allen Solly", "Wrangler", "Pepe Jeans", "Levi's", "Flying Machine", "Allen Solly", "Spykar", "VanVeusen"}
 BegumPet = {"Allen Solly", "Mufti", "Wrangler", "Pepe Jeans", "Lee", "Van Heusen", "Monte Carlo", "Flying Machine"}
