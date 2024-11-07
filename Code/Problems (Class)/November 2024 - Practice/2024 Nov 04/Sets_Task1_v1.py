@@ -10,7 +10,6 @@ print("=" * 120)
 # Question 1: Display the common brands available in two places
 common_brands = Jubilee_Hills.intersection(BegumPet)
 print(f"These are the following brands which are common: {common_brands}")
-
 print("=" * 120)
 # Question 2: Display the brands which are available only in BegumPet Branch
 only_BegumPet = BegumPet.difference(Jubilee_Hills)
