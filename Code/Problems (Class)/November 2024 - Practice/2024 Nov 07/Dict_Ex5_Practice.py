@@ -1,0 +1,1 @@
+# Q.2) Read product id , product name and product cost then create dictionary
