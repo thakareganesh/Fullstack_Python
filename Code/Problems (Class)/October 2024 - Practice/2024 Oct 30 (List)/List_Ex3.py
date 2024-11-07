@@ -2,7 +2,6 @@
 # 2. sort()
 # 3. count(element)
 # 4. index(element)
-from operator import indexOf, index
 
 print("=" * 35)
 # 4. index() is used to find index number of given element from list
