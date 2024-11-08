@@ -6,4 +6,4 @@ pid = int(input("Enter product ID: "))
 pname = input("Enter Product Name: ")
 
 dict1[pid] = pname
-print(f"Our Dictionary is: {dict1}")
+print(f"My Dictionary: {dict1}")
