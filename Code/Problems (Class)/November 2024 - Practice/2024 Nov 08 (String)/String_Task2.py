@@ -9,5 +9,6 @@ for char in my_str:
         no_duplicate.add(char)
 
 # print(no_duplicate)
+print("Vowels are without duplicates: ",end="")
 for char in no_duplicate:
     print(char,end="\t")
