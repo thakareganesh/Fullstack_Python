@@ -5,7 +5,7 @@ billAmt = 0
 ch = "y"
 while ch == "y":
     pid = int(input("Enter product ID: "))
-    pcost = eval(input("Enter product Cost: "))
+    pcost = float(input("Enter product Cost: "))
     dict1[pid] = pcost
     ch = input("Do you want to continue(y/n): ")
 
