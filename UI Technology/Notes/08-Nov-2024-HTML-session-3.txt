@@ -1,0 +1,129 @@
+1. Basic HTML Tags
+1. <h> 
+2. <p> 
+3. <br>
+4.<center>
+===========================
+2. Text formatting
+---------------------------
+a) <b> --> bold
+b) <i> --> italic
+c) <u> --> under line
+d) <strike> --> strike Through
+e) <sub> --> sub script
+f) <sup> --> super script
+=================================
+3. Image: to place images in web page 
+<img src, width, hieght alt title>
+=======================================
+4. Anhor Tag (<a>) --> Hyper Link
+=======================================
+
+--The <a> Tag is used to create a hyper link
+when user click on the hyper link. the specified web page
+or web site  or file will be opened.
+--> Basically web application contains links from one web page to
+another web page. so navigate one web page anothe web
+page then go with hyper links.
+--> once we created hyper link in web page . it is having 
+default CSS  Text with blue color+ handsymbol+ under line.
+
+syntax
+-------
+<a href="webpageName/websiteName/fileName">TextHere</a>
+
+ex:
+----
+<a href="image.html">Images</a>
+<a href="www.google.com">Google</a>
+<a href="www.flipkart.com">filpkart</a>
+<a href="resume.docx">ResumeM</a>
+=======================================================
+List Tags
+=========
+Basically To Keep List of Itames in web page we have 2 tpes List Tags
+1. <ul> un-order List
+2. <ol> order-List
+==============================================
+--> Inside <ul> or <ol> Tag, you should place one more Tags is called
+<li> Tags. <li> stands for list of Items.
+
+--> Here <ul> ,<ol> and <li> Tags are paired Tags.
+=====================================================
+ex:
+===
+<h2> Course Names</h2>
+<ul>
+<li> Java </li>
+<li> Python </li>
+<li> DevOps </li>
+<li>.Net</li>
+</ul>
+<h2> Course Names with oreder List</h2>
+<ol>
+<li> Java </li>
+<li> Python </li>
+<li> DevOps </li>
+<li>.Net</li>
+</ol>
+============================================
+<html>
+    <head>
+<title>List Tags</title>
+    </head>
+    <body>
+<h1>HTML Application for LIST Tags</h1>
+<h3>List of Flower Name with Un-Order List</h3>
+<ul>
+<li>Rose</li>
+<li>Lilly</li>
+<li>Lotus</li>
+<li>SunFlower</li>
+</ul>
+<h3>List of Flower Name with Order List</h3>
+<ol>
+<li>Rose</li>
+<li>Lilly</li>
+<li>Lotus</li>
+<li>SunFlower</li>
+</ol>
+<hr>
+<h3>Flowers Names</h3>
+<ul type="circle">
+    <li>Rose</li>
+    <li>Lilly</li>
+    <li>Lotus</li>
+    <li>SunFlower</li>
+</ul>
+<h3>Movies Names</h3>
+<ul type="square">
+    <li>Kalki</li>
+    <li>Amaran</li>
+    <li>Devara</li>
+    <li>Kha</li>
+</ul>
+<hr>
+<h3>Flowers Names</h3>
+<ol type="A">
+    <li>Rose</li>
+    <li>Lilly</li>
+    <li>Lotus</li>
+    <li>SunFlower</li>
+</ol>
+
+<h3>Movies Names</h3>
+<ol type="i">
+    <li>Kalki</li>
+    <li>Amaran</li>
+    <li>Devara</li>
+    <li>Kha</li>
+</ol>
+    </body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,96 @@
+UI+React JS
+============
+UI: stand for User Interface
+
+software dev
+===============
+software : Prasentation Layer (UI):HTML, CSS ,javaScript--> React Js,Angular JS
+Busines Logic Layer: Java, C#.net, Python (Django)
+Data Access Layer: Store Data :Data Base concept: Oracle,MysqlDb,Mysqlserver ,sqlite3 db
+=============================================================
+Prasentation Layer (UI):HTML, CSS ,javaScript--> React Js,Angular JS
+===========================================================
+devloping any web application From UI Required Techonlogies Are
+1. HTML
+2. CSS
+3. JavaScript
+=============================================================
+HTML
+=====
+HTML: stands for Hyper Text Markup Language
+-->The Use of HTML is to design Web Pages .That means HTML is Used to create elements
+like text box, password field, Paragraph Data, icons, images,bottons etc.
+--> HTML is easy language to understand.
+--> HTML is "client Side Language" That means the html code excuted on the client Side(Browser)
+--> HTML can support all types browsers ex: chrome,mozillafirefox, ie,edge,safari..etc
+--> HTML is not a case sestive programming language.
+------------------------------------------------------------------------------------------
+HTML vsrions
+==============
+HTML 1.x
+HTML2.x
+HTML 3.x
+HTML 4.X
+HTML 5.x The current version Of HTML is HTML5.x
+============================================================
+Tag
+====
+--> A Tag is a keyword, enclosed within <  and > in HTML language
+--> Tag is a Command / instruction.
+--> Tag is used to display some specific content in web Page.
+==================================================================
+Types Of HTML Tags
+===================
+Tags are 2 Types
+==================
+1. Paired Tags
+2. Un-Paired Tags
+
+1. Paired Tags
+-----------------
+--> The Tag Contains opening tag and ending Tag
+here opening indicate starting point of content and ending Tag indicate 
+ending point of our
+ content.
+
+ex: <h1>,<p>,<a> <li> ,<table>  <form> ...etc 
+
+ex: <h1>Sathya Technologies </h1>
+<p> Paragraph Data ...........................................</p>
+===================================================================================
+2. Un-Paired Tags
+---------------------
+The tag contains Only Opening State .there is no closing State. is called
+Un_paired Tag
+ex:
+<hr>
+<br>
+<img> 
+====================================================
+Softwares are Required for HTML,CSS and JavaScript PL
+-----------------------------------------------------------------------------
+1. notePad
+2. vs code (Editor) to edit our HTML code 
+3. Browser (Application software) --> to run our HTML code
+=======================================================
+HTML Programming Structure
+---------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,163 @@
+HTML Basic Tags
+===============
+HTML Introduction
+What Tag
+HTML programming Structure
+====================================
+HTML PL required Software 
+------------------------------------
+1. Browser --> to run HTML/CSS/JavaScript Code 
+2. VS code --> editors
+==========================================
+HTML Basic Tags
+================
+1. Header Tags: The use of Header Tags are to keep Heading 
+of the web page.
+--> The Header Tags are 6 types
+<h1> <h2> <h3> <h4> <h5> and <h6>
+--> The header paired Tags
+ex:
+===
+<h1>Sathya Technologies </h1> 
+<h2>Sathya Technologies </h2> 
+<h3>Sathya Technologies </h3> 
+<h4>Sathya Technologies </h4> 
+<h5>Sathya Technologies </h5> 
+<h6>Sathya Technologies </h6> 
+==============================================
+Paragraph Tag
+=============
+--The <p> tag is used to keep in Paragraph in web pages.
+--> The <p> tag is a paired Tag.
+--> when we use <p> Tag . here <p> gives one line space before and after the
+paragraph.
+ex:
+---
+<p> Paragraph Data </p>
+===========================================================
+<br> Tag
+------------
+--> The use of <br> Tag is keep Cursor Position into next line.
+--> <br> tag is un-paired Tag.
+ex:
+
+HTML is used to Design web pages<br>HTML devloped by netscape Company
+
+=============================================================
+<center> Tag
+------------------
+--> The use of <center> Tag is align the content center of the web page.
+--> it is a paired Tag
+ex:
+----
+<center>
+<h1>
+<p>
+<ol><li>Item</ol>
+</center>
+==========================================================
+Write a HTML code for following Out Put?
+
+<html>
+<head>
+    <title>SathyaWebPage</title>
+
+</head>
+<body>
+    <center>
+<h1>Sathya Technolgies</h1>
+<h2>Sathya Technolgies</h2>
+</center>
+<h3>About</h3>
+<p>
+    React is a free and open-source front-end JavaScript library for 
+    building user interfaces based on components by Facebook Inc. It 
+    is maintained by Meta and a community of individual developers 
+    and companies. React can be used to develop single-page, mobile, 
+    or server-rendered applications with frameworks like Next.js.
+</p>
+<p>React is a free and open-source front-end JavaScript library for building user 
+    interfaces based on components by Facebook Inc.</p>
+
+    React is a free and open-source front-end JavaScript library for building user 
+    interfaces<br> based on components by Facebook Inc
+
+</body>
+</html>
+================================================
+Text Formatting Tags
+=======================
+1. <b> The use of <b> Tag is to keep Text in Bold.
+2. <i> Tag is used to keep Text in cursive format 
+3. <u> Tag is used to keep Text with under line
+5. <strike> Tag is used to Strike Throug Text in Web Page
+6. <sup> Tag is used to keep Super Script Text in web pages
+7. <sub> Tag is used to keep sub script Text in web page.
+--> All text formatting Tags are paired Tags
+Ex:
+----
+Example Application for Text formatting Tags
+
+<html>
+<head>
+<title>TextFormat</title>
+</head>
+<body>
+<h1>Text formatting Tags</h1>
+<b>Welcome To HTML</b> <br>
+<i>Welcome To HTML</i><br>
+<u>Welcome To HTML</u><br>
+<strike>Welcome To HTML</strike><br>
+Welcome<sub> To HTML</sub><br>
+Welcome <sup>To HTML</sup>
+
+</body>
+
+</html>
+=========================================================
+Image Tag
+==========
+--> The <img> Tag is used to keep Images in to the web page.
+--> It is strogly recomended to place the image files in the
+same folder , where the html file is prasent.
+--> it is an un paired Tag.
+
+syntax:
+========
+<img src="ImageName.extention" width=200px hieght=200px
+ alt="image" title="rose">
+
+Attributes of Image Tags
+========================
+1 src: it is specifies Path of the Image or image name with extention.
+
+2. width: width of the image  --> use in pixels
+3. hieght: hieght of the image --> use in pixels
+4. alt: it is used to altername of image (in case image not in visble).
+5. title: tool tip name 
+===============================================================
+Example Application
+===================
+<html>
+    <head>
+<title>Image</title>
+    </head>
+    <body>
+<h1>Welcome HTML Application for Images</h1>
+<img src="n3.jpg" width="300px" height="300px" 
+alt="nature" title="natureimage">
+<img src="b1.jpg">
+    </body>
+</html>
+==========================================================
+
+
+
+
+
+
+
+
+
+
+
