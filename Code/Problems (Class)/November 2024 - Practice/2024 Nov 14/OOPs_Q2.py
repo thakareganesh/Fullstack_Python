@@ -6,7 +6,7 @@ class test:
         print(self.a)
     def display(self):
         b = 30
-        c = a + b  # --> NameError: 'a' is not defined.
+        c = self.a + b  # --> NameError: 'a' is not defined.
         print(c)
 
 t1 = test()
