@@ -1,0 +1,7 @@
+Core Python
+Advance Python
+Django
+Flask
+REST API
+UI Technology
+MangoDB
