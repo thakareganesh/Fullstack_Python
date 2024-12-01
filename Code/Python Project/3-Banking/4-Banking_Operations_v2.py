@@ -1,4 +1,5 @@
 import pyodbc as sql
+import random
 con = sql.connect(driver='Sql Server', server="GANESH\\SQLEXPRESS", database='Amazon1', user='Ganesh', password='82668')
 cur = con.cursor()
 def Deposit():
@@ -7,7 +8,6 @@ def Deposit():
     t1 = (dAmt, Cid)
     cur.execute(q1, t1)
     q2 = "Insert Into Transactions values(?,?,?,?)"
-    import random
     Tid = random.randint(1, 100)
     f_Tid = f"T{Tid}"
     Ctype = "D"
