@@ -1,0 +1,32 @@
+# question 3: read quantity from user then display billAmt as well as update availability
+import sqlite3 as sql
+con = sql.connect('Amazon')
+cur = con.cursor()
+q = "select * from product where MedName=?"
+MedName = input("Enter Medicine Name: ").capitalize()
+t1 = (MedName,)
+cur.execute(q,t1)
+data = cur.fetchall()
+if data:
+    if data[0][1] == MedName:
+        print("Medicine Available")
+        cost = data[0][2]
+        # print("Medicine Name:",MedName)
+        print("Cost is:",cost)
+        # print("Medicine Availability:",data[0][3])
+        quantity = int(input("How many sheets do you want: "))
+        availability = data[0][3]
+        if quantity <= availability:
+            query = "update product set Availability = ? where MedName = ?"
+            remaining_sheets = availability - quantity
+            t2 = (remaining_sheets,MedName)
+            cur.execute(query,t2)
+            print(f"Availability records of {MedName} updated")
+            con.commit()
+            billAmt = cost * quantity
+            print("Bill Amount is:", billAmt)
+        else:
+            print(f"There are only {availability} Sheets of {MedName} available")
+else:
+    print("Medicine Not Available")
+con.close()

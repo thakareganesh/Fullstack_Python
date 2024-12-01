@@ -1,8 +1,7 @@
 import sqlite3 as sql
 con = sql.connect('Amazon')
 cur = con.cursor()
-q = "insert into products values(101,'Ganesh',120,15,'2024-12-31')"
-
-cur.execute(q)
+q1 = "update products set availability = 12 where pid = 111"
+cur.execute(q1)
 con.commit()
 con.close()
