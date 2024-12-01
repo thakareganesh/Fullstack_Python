@@ -17,7 +17,6 @@ def Deposit():
     print(f"{dAmt}₹ is Deposited to Your Account")
 
 def WithDraw():
-
     cAmt = round(data[0][3],2) #Customer Account Balance
     wAmt = float(input("How much money you want to withdraw: "))
     if wAmt < cAmt:
