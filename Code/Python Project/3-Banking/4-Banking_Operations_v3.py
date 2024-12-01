@@ -17,19 +17,24 @@ def Deposit():
     print(f"{dAmt}₹ is Deposited to Your Account")
 
 def WithDraw():
-    wAmt = float(input("How much money you want to withdraw: "))
-    q1 = "UPDATE Customer SET CAmount = CAmount - ? where Cid = ?"
-    t1 = (wAmt, Cid)
-    cur.execute(q1, t1)
-    q2 = "Insert Into Transactions values(?,?,?,?)"
-    Tid = random.randint(1, 100)
-    f_Tid = f"T{Tid}"
-    Ctype = "W"
-    t2 = (f_Tid, Cid, Ctype, wAmt)
-    cur.execute(q2, t2)
-    con.commit()
-    print(f"{wAmt}₹ is Withdrawn From Your Account")
 
+    cAmt = round(data[0][3],2) #Customer Account Balance
+    wAmt = float(input("How much money you want to withdraw: "))
+    if wAmt < cAmt:
+        q1 = "UPDATE Customer SET CAmount = CAmount - ? where Cid = ?"
+        t1 = (wAmt, Cid)
+        cur.execute(q1, t1)
+        q2 = "Insert Into Transactions values(?,?,?,?)"
+        Tid = random.randint(1, 100)
+        f_Tid = f"T{Tid}"
+        Ctype = "W"
+        t2 = (f_Tid, Cid, Ctype, wAmt)
+        cur.execute(q2, t2)
+        con.commit()
+        print(f"{wAmt}₹ is Withdrawn From Your Account")
+    else:
+        print("Transaction declined: You have insufficient funds to complete this operation.")
+        print("\t\t\t\t\t  Please check your balance and try again.")
 
 def BalEnq():
     q3 = "Select * from Customer where Cid = ?"
@@ -60,9 +65,9 @@ def ShowAccDetails():
     if record:
         print("Your Account Details:")
         print("Cid \tCname \t Cgender \tCAmount")
-        CAmount = record[0][3]
-        CAmount = round(CAmount,2)
-        print(f"{record[0][0]} {record[0][1]} { record[0][2]} \t\t{CAmount}")
+        Cgender = record[0][2]
+        CAmount = round(record[0][3],2)
+        print(f"{Cid}  {Cname}   {Cgender} \t\t{CAmount}")
         # for row in record:
         #     for col in row:
         #         print(col,end='\t')
