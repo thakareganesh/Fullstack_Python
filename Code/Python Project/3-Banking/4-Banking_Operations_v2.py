@@ -22,7 +22,6 @@ def WithDraw():
     t1 = (wAmt, Cid)
     cur.execute(q1, t1)
     q2 = "Insert Into Transactions values(?,?,?,?)"
-    import random
     Tid = random.randint(1, 100)
     f_Tid = f"T{Tid}"
     Ctype = "W"
