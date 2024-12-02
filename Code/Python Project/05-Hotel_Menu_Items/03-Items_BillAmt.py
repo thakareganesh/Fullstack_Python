@@ -10,7 +10,6 @@ ItemID = int(input("Enter Item ID: "))
 t1 = (ItemID,)
 cur.execute(q1,t1)
 data = cur.fetchall()
-
 if data:
     if data[0][0] == ItemID:
         ItemName = data[0][1]
@@ -29,14 +28,15 @@ if data:
         print(f"Your Discount is: {disc}%")
         print(f"Your Discount Amount is: {discAmt}₹")
         finBillAmt = billAmt - discAmt
+        print(f"Your Final Bill is {finBillAmt}")
         cust_paid = int(input("Customer paid: "))
-        if cust_paid < finBillAmt:
+        if cust_paid >= finBillAmt:
+            balance = cust_paid - finBillAmt
+            print(f"Remaining Balance Amount is: {balance}")
+        else:
             print("Insufficient payment! Please pay the remaining amount.")
             remaining = finBillAmt - cust_paid
             print(f"You still owe: {remaining}₹")
-        else:
-            balance = cust_paid - finBillAmt
-            print(f"Remaining Balance Amount is: {balance}₹")
 else:
     print("Invalid Choice")
 con.close()
