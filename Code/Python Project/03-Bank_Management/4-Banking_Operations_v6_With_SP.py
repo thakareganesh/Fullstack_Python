@@ -89,39 +89,44 @@ except sql.Error as e:
     print(f"Details: {e}")
 else:
     print("Welcome to State Bank of India")
-    Cid = input("Enter Your ID: ")
-    q0 = "EXEC sp_dis_customer ?"
-    cur.execute(q0,(Cid,))
-    data = cur.fetchall()
-    if data:
-        Cname = data[0][1]
-        Cgender = data[0][2]
-        print(f"You're Welcome '{Cname.upper()}'")
-        ch = "yes"
-        while ch == "yes":
-            print("Choose Below options:")
-            Bank_Options()
-            options = int(input("Choose Your Option from above List: "))
-            if options >= 1 and options <= 6:
-                if options == 1:
-                    Deposit()
-                elif options == 2:
-                    WithDraw()
-                elif options == 3:
-                    BalEnq()
-                elif options == 4:
-                    print("Mini Statement For Your Account")
-                    miniStmt()
-                elif options == 5:
-                    ShowAccDetails()
+    try:
+        Cid = input("Enter Your ID: ")
+        if not Cid.isdigit():
+            raise ValueError("Invalid input. The Customer ID must contain numbers only.")
+        q0 = "EXEC sp_dis_customer ?"
+        cur.execute(q0,(Cid,))
+        data = cur.fetchall()
+        if data:
+            Cname = data[0][1]
+            Cgender = data[0][2]
+            print(f"You're Welcome '{Cname.upper()}'")
+            ch = "yes"
+            while ch == "yes":
+                print("Choose Below options:")
+                Bank_Options()
+                options = int(input("Choose Your Option from above List: "))
+                if options >= 1 and options <= 6:
+                    if options == 1:
+                        Deposit()
+                    elif options == 2:
+                        WithDraw()
+                    elif options == 3:
+                        BalEnq()
+                    elif options == 4:
+                        print("Mini Statement For Your Account")
+                        miniStmt()
+                    elif options == 5:
+                        ShowAccDetails()
+                    else:
+                        print("Thank you for using our services!")
+                        break
                 else:
-                    print("Thank you for using our services!")
-                    break
-            else:
-                print("Invalid Selection of Option. Please Try again!")
-            ch = input("Do you want to perform any other operations? (yes/no): ").lower()
-    else:
-        print("Unauthorized Access: You are not an authorized user of our bank.")
-        print("Please contact your branch for further assistance.")
+                    print("Invalid Selection of Option. Please Try again!")
+                ch = input("Do you want to perform any other operations? (yes/no): ").lower()
+        else:
+            print("Unauthorized Access: You are not an authorized user of our bank.")
+            print("Please contact your branch for further assistance.")
+    except ValueError as e:
+        print(e)
     con.close()
     print("Logging out. Goodbye!")
