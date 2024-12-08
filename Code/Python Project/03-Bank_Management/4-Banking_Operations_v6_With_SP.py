@@ -8,47 +8,53 @@ for i in range(1,101):
         tid_lists.append(val)
 
 def Deposit():
-    dAmt = float(input("How much money you want to Deposit: "))
-    if dAmt > 0:
-        q1 = "exec sp_updateD_Customer ?,?"
-        t1 = (dAmt, Cid)
-        cur.execute(q1, t1)
-        q2 = "exec sp_ins_trans ?,?,?,?"
-        Tid = tid_lists[0]
-        f_Tid = f"T{Tid}"
-        tid_lists.pop(0)
-        Ctype = "D"
-        t2 = (f_Tid, Cid, Ctype, dAmt)
-        cur.execute(q2, t2)
-        con.commit()
-        print(f"{dAmt}₹ is Deposited to Your Account")
-    else:
-        print("Transaction Unsuccessful: Deposit Amount Must be More than Rs.0₹")
-
-def WithDraw():
-    query = "exec sp_dis_customer ?"
-    cur.execute(query,(Cid,))
-    CAmt = round(cur.fetchone()[3],2)
-    wAmt = float(input("How much money you want to withdraw: "))
-    if wAmt > 0:
-        if wAmt < CAmt:
-            q1 = "exec sp_updateW_Customer ?,?"
-            t1 = (wAmt, Cid)
+    try:
+        dAmt = float(input("How much money you want to Deposit: "))
+        if dAmt > 0:
+            q1 = "exec sp_updateD_Customer ?,?"
+            t1 = (dAmt, Cid)
             cur.execute(q1, t1)
             q2 = "exec sp_ins_trans ?,?,?,?"
             Tid = tid_lists[0]
             f_Tid = f"T{Tid}"
             tid_lists.pop(0)
-            Ctype = "W"
-            t2 = (f_Tid, Cid, Ctype, wAmt)
+            Ctype = "D"
+            t2 = (f_Tid, Cid, Ctype, dAmt)
             cur.execute(q2, t2)
             con.commit()
-            print(f"{wAmt}₹ is Withdrawn From Your Account")
+            print(f"{dAmt}₹ is Deposited to Your Account")
         else:
-            print("Transaction Declined: You have insufficient funds to complete this operation.")
-            print("\t\t\t\t\t  Please check your balance and try again.")
-    else:
-        print("Transaction Unsuccessful: Withdraw Amount Must be More than Rs.0₹")
+            print("Transaction Unsuccessful: Deposit Amount Must be More than Rs.0₹")
+    except ValueError:
+        print("Invalid input. Please enter a valid numeric value for the deposit amount.")
+
+def WithDraw():
+    query = "exec sp_dis_customer ?"
+    cur.execute(query,(Cid,))
+    CAmt = round(cur.fetchone()[3],2)
+    try:
+        wAmt = float(input("How much money you want to withdraw: "))
+        if wAmt > 0:
+            if wAmt < CAmt:
+                q1 = "exec sp_updateW_Customer ?,?"
+                t1 = (wAmt, Cid)
+                cur.execute(q1, t1)
+                q2 = "exec sp_ins_trans ?,?,?,?"
+                Tid = tid_lists[0]
+                f_Tid = f"T{Tid}"
+                tid_lists.pop(0)
+                Ctype = "W"
+                t2 = (f_Tid, Cid, Ctype, wAmt)
+                cur.execute(q2, t2)
+                con.commit()
+                print(f"{wAmt}₹ is Withdrawn From Your Account")
+            else:
+                print("Transaction Declined: You have insufficient funds to complete this operation.")
+                print("\t\t\t\t\t  Please check your balance and try again.")
+        else:
+            print("Transaction Unsuccessful: Withdraw Amount Must be More than Rs.0₹")
+    except ValueError:
+        print("Invalid input. Please enter a valid numeric value for the Withdraw amount.")
 
 def BalEnq():
     q3 = "exec sp_dis_customer ?"
