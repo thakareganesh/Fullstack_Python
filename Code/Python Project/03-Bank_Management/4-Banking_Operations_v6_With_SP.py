@@ -104,24 +104,27 @@ else:
             while ch == "yes":
                 print("Choose Below options:")
                 Bank_Options()
-                options = int(input("Choose Your Option from above List: "))
-                if options >= 1 and options <= 6:
-                    if options == 1:
-                        Deposit()
-                    elif options == 2:
-                        WithDraw()
-                    elif options == 3:
-                        BalEnq()
-                    elif options == 4:
-                        print("Mini Statement For Your Account")
-                        miniStmt()
-                    elif options == 5:
-                        ShowAccDetails()
+                try:
+                    options = int(input("Choose Your Option from above List (1-6): "))
+                    if options >= 1 and options <= 6:
+                        if options == 1:
+                            Deposit()
+                        elif options == 2:
+                            WithDraw()
+                        elif options == 3:
+                            BalEnq()
+                        elif options == 4:
+                            print("Mini Statement For Your Account")
+                            miniStmt()
+                        elif options == 5:
+                            ShowAccDetails()
+                        else:
+                            print("Thank you for using our services!")
+                            break
                     else:
-                        print("Thank you for using our services!")
-                        break
-                else:
-                    print("Invalid Selection of Option. Please Try again!")
+                        print("Invalid Selection of Option. Please Try again!")
+                except ValueError:
+                    print("Invalid input. Please enter a numeric value between 1 and 6.")
                 ch = input("Do you want to perform any other operations? (yes/no): ").lower()
         else:
             print("Unauthorized Access: You are not an authorized user of our bank.")
