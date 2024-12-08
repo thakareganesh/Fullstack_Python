@@ -1,7 +1,5 @@
 import pyodbc as sql
 import random
-con = sql.connect(driver='Sql Server', server="GANESH\\SQLEXPRESS", database='Amazon1', user='Ganesh', password='82668')
-cur = con.cursor()
 
 tid_lists = []
 for i in range(1,101):
@@ -83,41 +81,47 @@ def ShowAccDetails():
 def Bank_Options():
     print("1.Deposit \n2.Withdraw\n3.Balance Enquiry\n4.Mini Statement\n5.Show Account Details \n6.Exit")
 
-
-print("Welcome to State Bank of India")
-Cid = input("Enter Your ID: ")
-q0 = "EXEC sp_dis_customer ?"
-cur.execute(q0,(Cid,))
-data = cur.fetchall()
-if data:
-    Cname = data[0][1]
-    Cgender = data[0][2]
-    print(f"You're Welcome '{Cname.upper()}'")
-    ch = "yes"
-    while ch == "yes":
-        print("Choose Below options:")
-        Bank_Options()
-        options = int(input("Choose Your Option from above List: "))
-        if options >= 1 and options <= 6:
-            if options == 1:
-                Deposit()
-            elif options == 2:
-                WithDraw()
-            elif options == 3:
-                BalEnq()
-            elif options == 4:
-                print("Mini Statement For Your Account")
-                miniStmt()
-            elif options == 5:
-                ShowAccDetails()
-            else:
-                print("Thank you for using our services!")
-                break
-        else:
-            print("Invalid Selection of Option. Please Try again!")
-        ch = input("Do you want to perform any other operations? (yes/no): ").lower()
+try:
+    con = sql.connect(driver='Sql Server', server="GANESH\\SQLEXPRESS", database='Amazon1', user='Ganesh', password='82668')
+    cur = con.cursor()
+except sql.Error as e:
+    print("Database Connection Error. Please verify the server address, credentials, and network status.")
+    print(f"Details: {e}")
 else:
-    print("Unauthorized Access: You are not an authorized user of our bank.")
-    print("Please contact your branch for further assistance.")
-con.close()
-print("Logging out. Goodbye!")
+    print("Welcome to State Bank of India")
+    Cid = input("Enter Your ID: ")
+    q0 = "EXEC sp_dis_customer ?"
+    cur.execute(q0,(Cid,))
+    data = cur.fetchall()
+    if data:
+        Cname = data[0][1]
+        Cgender = data[0][2]
+        print(f"You're Welcome '{Cname.upper()}'")
+        ch = "yes"
+        while ch == "yes":
+            print("Choose Below options:")
+            Bank_Options()
+            options = int(input("Choose Your Option from above List: "))
+            if options >= 1 and options <= 6:
+                if options == 1:
+                    Deposit()
+                elif options == 2:
+                    WithDraw()
+                elif options == 3:
+                    BalEnq()
+                elif options == 4:
+                    print("Mini Statement For Your Account")
+                    miniStmt()
+                elif options == 5:
+                    ShowAccDetails()
+                else:
+                    print("Thank you for using our services!")
+                    break
+            else:
+                print("Invalid Selection of Option. Please Try again!")
+            ch = input("Do you want to perform any other operations? (yes/no): ").lower()
+    else:
+        print("Unauthorized Access: You are not an authorized user of our bank.")
+        print("Please contact your branch for further assistance.")
+    con.close()
+    print("Logging out. Goodbye!")
