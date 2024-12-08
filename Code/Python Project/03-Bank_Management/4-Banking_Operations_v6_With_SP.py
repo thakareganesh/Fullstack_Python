@@ -22,7 +22,9 @@ def Deposit():
             t2 = (f_Tid, Cid, Ctype, dAmt)
             cur.execute(q2, t2)
             con.commit()
-            print(f"{dAmt}₹ is Deposited to Your Account")
+            print(f"{dAmt}₹ has been successfully deposited to your account.")
+            print(f"Your Transaction ID for this deposit is: {f_Tid}.")
+
         else:
             print("Transaction Unsuccessful: Deposit Amount Must be More than Rs.0₹")
     except ValueError:
@@ -47,7 +49,8 @@ def WithDraw():
                 t2 = (f_Tid, Cid, Ctype, wAmt)
                 cur.execute(q2, t2)
                 con.commit()
-                print(f"{wAmt}₹ is Withdrawn From Your Account")
+                print(f"{wAmt}₹ has been successfully withdrawn from your account.")
+                print(f"Your Transaction ID for this withdrawal is: {f_Tid}.")
             else:
                 print("Transaction Declined: You have insufficient funds to complete this operation.")
                 print("\t\t\t\t\t  Please check your balance and try again.")
@@ -94,7 +97,7 @@ except sql.Error as e:
     print("Database Connection Error. Please verify the server address, credentials, and network status.")
     print(f"Details: {e}")
 else:
-    print("Welcome to State Bank of India")
+    print("=== Welcome to STATE BANK OF INDIA ===")
     try:
         Cid = input("Enter Your ID: ")
         if not Cid.isdigit():
